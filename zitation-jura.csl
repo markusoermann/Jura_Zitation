@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="note" default-locale="de-DE">
+  <info>
+    <title>Jura Zitationsstil</title>
+    <id>http://www.zotero.org</id>
+    <link href="http://www.zotero.org" rel="self"/>
+    <author>
+      <name>Markus Oermann</name>
+      <email>markusoermann@yahoo.de</email>
+    </author>
+    <summary>Jura Zitationsstil - Hinweise: Da Zotero derzeit keine eigene Eintragsart für Kommentarliteratur vorsieht, verwendet dieser Stil ersatzweise die Eintragsart 'Wörterbucheintrag'. Diese muss also gewählt werden, wenn Kommentarfundstellen in die Zotero Bibliothek aufgenommen werden. Bei Urteilen müssen Gericht, Az. und/oder Fundstelle in den Titel geschrieben werden (Beispieltitel: 'Arbeitsgericht Bochum, Urteil vom 09.02.2012, 3 Ca 1203/11'), da nur so eine sinnvolle Anzeige in der Zotero Bibliothek möglich ist.</summary>
+    <category citation-format="note"/>
+    <category field="law"/>
+    <updated>2012-09-03T12:00:00+00:00</updated>
+    <rights>This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License: http://creativecommons.org/licenses/by-sa/3.0/</rights>
+  </info>
+  <citation>
+    <layout>
+      <choose>
+        <if type="article-journal">
+	        <if position="first">
+	          <names variable="author" prefix="">
+	            <name delimiter="/" name-as-sort-order="all" sort-separator=", " form="short"/>
+	          </names>
+	          <text variable="container-title" prefix=", " suffix=" " form="short"/>
+	          <date variable="issued" prefix="" suffix=", ">
+	            <date-part name="year" form="long" prefix="" suffix=""/>
+	          </date>
+	          <text variable="volume" prefix="Vol. " suffix=", "/>
+	          <text variable="issue" prefix="Nr. " suffix=": "/>
+	          <text variable="page" prefix="" suffix=""/>
+	          <text variable="locator" prefix=", (" suffix=")"/>
+	        </if>
+	        <else-if position="ibid-with-locator">
+		    	<group delimiter=", ">
+		        	<text term="ibid"/>
+		            <text variable="locator" prefix=" " suffix=""/>
+		    	</group>
+		    </else-if>
+		    <else-if position="ibid">
+		    	<text term="ibid"/>
+		    </else-if>
+			<else-if position="subsequent">
+	          <names variable="author" prefix="">
+	            <name delimiter="/" name-as-sort-order="all" sort-separator=", " form="short"/>
+	          </names>
+	          <text variable="container-title" prefix=", " suffix=" " form="short"/>
+	          <date variable="issued" prefix="" suffix=", ">
+	            <date-part name="year" form="long" prefix="" suffix=""/>
+	          </date>
+	          <text variable="volume" prefix="Vol. " suffix=", "/>
+	          <text variable="issue" prefix="Nr. " suffix=": "/>
+	          <text variable="page" prefix="" suffix=", ("/>
+	          <text variable="locator" prefix="" suffix=")"/>
+			</else-if>
+		</if>
+        <else-if type="article-newspaper">
+	    	<if position="first">
+	          <names variable="author" prefix="">
+	            <name delimiter="/" name-as-sort-order="all" sort-separator=", "/>
+	          </names>
+	          <date variable="issued" prefix=" (" suffix="):">
+		      	<date-part name="year" form="long" prefix="" suffix=""/>
+		      </date>
+		      <text variable="title" prefix=" " suffix=". " font-style="italic"/>
+	          <text variable="container-title" prefix="In: " suffix=", "/>
+	          <date variable="issued" prefix="am " suffix=": ">
+		      	<date-part name="day" form="ordinal" prefix="" suffix="."/>
+		      	<date-part name="month" form="numeric" prefix="" suffix="."/>
+			 	<date-part name="year" form="long" prefix="" suffix=""/>
+	          </date>
+	          <text variable="locator" suffix=""/>
+           	</if>
+	        <else-if position="ibid-with-locator">
+		    	<group delimiter=", ">
+		        	<text term="ibid"/>
+		            <text variable="locator" prefix=" " suffix=""/>
+		        </group>
+			</else-if>
+			<else-if position="ibid">
+				<text term="ibid"/>
+			</else-if>
+			<else-if position="subsequent">
+				<names variable="author" prefix="">
+					<name delimiter="/" name-as-sort-order="all" sort-separator=", "/>
+				</names>
+				<date variable="issued" prefix=" (" suffix="):">
+			      	<date-part name="year" form="long" prefix="" suffix=""/>
+				</date>
+				<text variable="title" prefix=" " suffix=". " font-style="italic"/>
+				<text variable="container-title" prefix="In: " suffix=", "/>
+				<date variable="issued" prefix="am " suffix=": ">
+					<date-part name="day" form="ordinal" prefix="" suffix="."/>
+					<date-part name="month" form="numeric" prefix="" suffix="."/>
+					<date-part name="year" form="long" prefix="" suffix=""/>
+				</date>
+				<text variable="locator" suffix=""/>
+			</else-if>
+		</else-if>
+        <else-if type="bill">
+        	<if position="first">
+        		<names variable="author" prefix="" suffix=": ">
+            		<name delimiter="/ " name-as-sort-order="all" sort-separator=", " form="long"/>
+         		</names>
+		        <text variable="title" prefix=": " suffix=". " font-style="italic"/>
+		        <text variable="URL" prefix="Abrufbar unter: &lt;" suffix="> "/>
+		        <date variable="accessed" prefix="Zuletzt abgerufen am: " suffix="">
+		            <date-part name="day" form="ordinal" prefix="" suffix="."/>
+		            <date-part name="month" form="numeric" prefix="" suffix="."/>
+		            <date-part name="year" form="long" prefix="" suffix=""/>
+		          </date>
+          </if>
+           <else-if position="ibid-with-locator">
+		          <group delimiter=", ">
+		            <text term="ibid"/>
+		            <text variable="locator" prefix=" " suffix=""/>
+		          </group>
+		   </else-if>
+		   <else-if position="ibid">
+		          <text term="ibid"/>
+		    </else-if>
+			<else-if position="subsequent">
+				<names variable="author" prefix="" suffix=": ">
+            		<name delimiter="/ " name-as-sort-order="all" sort-separator=", " form="long"/>
+          		</names>
+          		<text variable="title" prefix=": " suffix="" font-style="italic"/>
+          </else-if>
+        </else-if>
+             <else-if type="book">
+	        <if position="first">
+	         <names variable="author" prefix="">
+	            <name delimiter="/" name-as-sort-order="all" sort-separator=", " form="long"/>
+	          </names>
+	          <date variable="issued" prefix=" (" suffix="):">
+	            <date-part name="year" form="long" prefix="" suffix=""/>
+	          </date>
+	          <text variable="title" prefix=" " suffix=". " font-style="italic"/>
+	          <text variable="edition" prefix="" suffix=" Aufl., "/>
+	          <text variable="publisher-place" prefix="" suffix=", "/>
+	          <text variable="locator" prefix=" " suffix=""/>
+			</if>
+	        <else-if position="ibid-with-locator">
+	          <group delimiter=", ">
+	            <text term="ibid"/>
+	            <text variable="locator" prefix=" " suffix=""/>
+	          </group>
+	        </else-if>
+	        <else-if position="ibid">
+	          <text term="ibid"/>
+	        </else-if>
+			<else-if position="subsequent">
+	          <names variable="author">
+	            <name delimiter="/" name-as-sort-order="all" sort-separator=", " form="short"/>
+	          </names>
+	          <date variable="issued" prefix=" (" suffix="):">
+	            <date-part name="year" form="long" prefix="" suffix=""/>
+	          </date>
+	          <text variable="title" prefix=" " suffix=", " form="short" font-style="italic"/>
+	          <text variable="locator" prefix=" " suffix=""/>
+	        </else-if>
+        </else-if>
+       <else-if type="chapter">
+	        <if position="first">
+	 		<names variable="author" prefix="">
+	            <name delimiter="/" name-as-sort-order="all" sort-separator=", " form="long"/>
+	          </names>
+	          <date variable="issued" prefix=" (" suffix="):">
+	            <date-part name="year" form="long" prefix="" suffix=""/>
+	          </date>
+	          <text variable="title" prefix=" " suffix=": " font-style="italic"/>
+	          <text variable="locator" prefix="" suffix=". "/>
+	          <names variable="editor" prefix=" In: " suffix=" (Hrsg.): ">
+	            <name delimiter="/" name-as-sort-order="all" sort-separator=", " form="long"/>
+	          </names>
+	          <text variable="container-title" prefix="" suffix=", " font-style="italic"/>
+	           <date variable="issued" prefix="" suffix="">
+	            <date-part name="year" form="long" prefix="" suffix=", "/>
+	          </date>
+	          <text variable="page" prefix="" suffix=""/>
+	          <text variable="locator" prefix=", (" suffix=")"/>
+          	</if>
+          	<else-if position="ibid-with-locator">
+	          <group delimiter=", ">
+	            <text term="ibid"/>
+	            <text variable="locator" prefix=" " suffix=""/>
+	          </group>
+	        </else-if>
+	        <else-if position="ibid">
+	          <text term="ibid"/>
+	        </else-if>
+   			<else-if position="subsequent">
+	          <names variable="author">
+	            <name delimiter="/" name-as-sort-order="all" sort-separator=", " form="short"/>
+	          </names>
+	          <date variable="issued" prefix=" (" suffix="):">
+	            <date-part name="year" form="long" prefix="" suffix=""/>
+	          </date>
+	          <text variable="title" prefix=" " suffix=", " form="short" font-style="italic"/>
+	          <text variable="locator" prefix=" " suffix=""/>
+	        </else-if>
+        </else-if>
+    <else-if type="entry-encyclopedia">
+	        <if position="first">
+	 		<names variable="author" prefix="" suffix=" ">
+	            <name delimiter="/ " name-as-sort-order="all" sort-separator=", " form="long"/>
+	          </names>
+	          <date variable="issued" prefix=" (" suffix="):">
+	            <date-part name="year" form="long" prefix="" suffix=""/>
+	          </date>
+	          <text variable="title" prefix=" " suffix=". " font-style="italic"/>
+	          <text variable="URL" prefix="Abrufbar unter: &lt;" suffix="> "/>
+	          <date variable="accessed" prefix="Zuletzt abgerufen am: " suffix="">
+	            <date-part name="day" form="ordinal" prefix="" suffix="."/>
+	            <date-part name="month" form="numeric" prefix="" suffix="."/>
+	            <date-part name="year" form="long" prefix="" suffix=""/>
+	          </date>
+	         </if>
+	         <else-if position="ibid-with-locator">
+	          <group delimiter=", ">
+	            <text term="ibid"/>
+	            <text variable="locator" prefix=" " suffix=""/>
+	          </group>
+	        </else-if>
+	        <else-if position="ibid">
+	          <text term="ibid"/>
+	        </else-if>
+	         <else-if position="subsequent">
+	         <names variable="author" prefix="" suffix=" ">
+	            <name delimiter="/ " name-as-sort-order="all" sort-separator=", " form="long"/>
+	          </names>
+	          <date variable="issued" prefix=" (" suffix="):">
+	            <date-part name="year" form="long" prefix="" suffix=""/>
+	          </date>
+	          <text variable="title" prefix=" " suffix="" font-style="italic"/>
+	       </else-if>
+		</else-if>
+       <else-if type="entry-dictionary">
+        <if position="first">
+	        <names variable="editor" prefix="" suffix="">
+	        <name delimiter="/" name-as-sort-order="all" sort-separator=", " form="short"/>
+	        </names>
+	 		<names variable="author" prefix="/" suffix=", " font-style="italic">
+			<name delimiter="/" name-as-sort-order="all" sort-separator=", " form="short"/>
+			</names>	          
+			<text variable="title" prefix="" suffix=", " form="short"/>
+	          <text variable="title" prefix=" " suffix=": "/>
+	          <text variable="locator" prefix="" suffix=""/>
+		</if>
+	     <else-if position="ibid-with-locator">
+	          <group delimiter=", ">
+	            <text term="ibid"/>
+	            <text variable="locator" prefix=" " suffix=""/>
+	          </group>
+	      </else-if>
+	     <else-if position="ibid">
+	          <text term="ibid"/>
+	     </else-if>
+	     <else-if position="subsequent">          
+	     <names variable="editor" prefix="" suffix="">
+	        <name delimiter="/" name-as-sort-order="all" sort-separator=", " form="short"/>
+	        </names>
+	 		<names variable="author" prefix="/" suffix=", " font-style="italic">
+			<name delimiter="/" name-as-sort-order="all" sort-separator=", " form="short"/>
+			</names>	          
+			<text variable="title" prefix="" suffix=", " form="short"/>
+	          <text variable="title" prefix=" " suffix=": "/>
+	          <text variable="locator" prefix="" suffix=""/>
+		</else-if>
+		</else-if>
+		<else-if type="paper-conference">
+		<if position="first">
+          <names variable="author" prefix="">
+            <name delimiter="/" name-as-sort-order="all" sort-separator=", "/>
+          </names>
+            <date variable="issued" prefix=" (" suffix="):">
+	            <date-part name="year" form="long" prefix="" suffix=""/>
+	          </date>
+	          <text variable="title" prefix=" " suffix=", " font-style="italic"/>
+	          <text variable="locator" prefix="" suffix=". "/>
+          <text variable="container-title" prefix="In: " suffix=". "/>
+          	  <text variable="URL" prefix="Abrufbar unter: &lt;" suffix="> "/>
+	          <date variable="accessed" prefix="Zuletzt abgerufen am: " suffix="">
+	            <date-part name="day" form="ordinal" prefix="" suffix="."/>
+	            <date-part name="month" form="numeric" prefix="" suffix="."/>
+	            <date-part name="year" form="long" prefix="" suffix=""/>
+	          </date>
+	     </if>
+	     <else-if position="ibid-with-locator">
+	          <group delimiter=", ">
+	            <text term="ibid"/>
+	            <text variable="locator" prefix=" " suffix=""/>
+	          </group>
+	        </else-if>
+	        <else-if position="ibid">
+	          <text term="ibid"/>
+	     </else-if>
+	     <else-if position="subsequent">          
+	     	<names variable="author" prefix="">
+           	 <name delimiter="/" name-as-sort-order="all" sort-separator=", " form="short"/>
+          	</names>
+            <date variable="issued" prefix=" (" suffix="):">
+	            <date-part name="year" form="long" prefix="" suffix=""/>
+	          </date>
+	          <text variable="title" prefix=" " suffix=", " font-style="italic"/>
+	          <text variable="locator" prefix="" suffix=""/>
+	     </else-if>
+        </else-if>
+       <else-if type="webpage">
+         <if position="first">
+           <names variable="author" prefix="" suffix=" ">
+            <name delimiter="/ " name-as-sort-order="all" sort-separator=", " form="long"/>
+          </names>
+          <date variable="issued" prefix=" (" suffix="):">
+            <date-part name="year" form="long" prefix="" suffix=""/>
+          </date>
+          <text variable="title" prefix=" " suffix=". " font-style="italic"/>
+          <text variable="container-title" prefix=" In: " suffix=". "/>
+          <text variable="URL" prefix="Abrufbar unter: &lt;" suffix="> "/>
+          <date variable="accessed" prefix="Zuletzt abgerufen am: " suffix="">
+            <date-part name="day" form="ordinal" prefix="" suffix="."/>
+            <date-part name="month" form="numeric" prefix="" suffix="."/>
+            <date-part name="year" form="long" prefix="" suffix=""/>
+          </date>
+         </if>
+         <else-if position="ibid-with-locator">
+	          <group delimiter=", ">
+	            <text term="ibid"/>
+	            <text variable="locator" prefix=" " suffix=""/>
+	          </group>
+	        </else-if>
+	        <else-if position="ibid">
+	          <text term="ibid"/>
+	     </else-if>
+	     <else-if position="subsequent">
+	       <names variable="author" prefix="" suffix=" ">
+            <name delimiter="/ " name-as-sort-order="all" sort-separator=", " form="long"/>
+          </names>
+          <date variable="issued" prefix=" (" suffix="):">
+            <date-part name="year" form="long" prefix="" suffix=""/>
+          </date>
+          <text variable="title" prefix=" " suffix="" font-style="italic"/>
+         </else-if>
+        </else-if>
+       <else-if type="legal_case">
+        <if position="first">
+         <text variable="title" prefix="" suffix=", "/>
+          <text variable="locator" suffix=""/>
+        </if>
+           <else-if position="ibid-with-locator">
+	          <group delimiter=", ">
+	            <text term="ibid"/>
+	            <text variable="locator" prefix=" " suffix=""/>
+	          </group>
+	    </else-if>
+	    <else-if position="ibid">
+	          <text term="ibid"/>
+	     </else-if>
+	     <else-if position="subsequent">
+			<text variable="title" prefix="" suffix=", "/>
+	          <text variable="locator" suffix=""/>
+         </else-if>
+        </else-if>
+        <else>
+         <if position="first">
+          <names variable="author" prefix="">
+            <name delimiter="/ " name-as-sort-order="all" sort-separator=", " form="short"/>
+          </names>
+          <date variable="issued" prefix=" (" suffix="):">
+            <date-part name="year" form="long" prefix="" suffix=""/>
+          </date>
+          <text variable="title" prefix=" " suffix=",  " font-style="italic"/>
+          <text variable="locator" suffix=". "/>
+           <text variable="URL" prefix=" Abrufbar unter: &lt;" suffix="> "/>
+          <date variable="accessed" prefix="Zuletzt abgerufen am: " suffix="">
+            <date-part name="day" form="ordinal" prefix="" suffix="."/>
+            <date-part name="month" form="numeric" prefix="" suffix="."/>
+            <date-part name="year" form="long" prefix="" suffix=""/>
+          </date>
+         </if>
+         <else-if position="ibid-with-locator">
+	          <group delimiter=", ">
+	            <text term="ibid"/>
+	            <text variable="locator" prefix=" " suffix=""/>
+	          </group>
+	     </else-if>
+	     <else-if position="ibid">
+	          <text term="ibid"/>
+	     </else-if>
+	     <else-if position="subsequent">
+	        <names variable="author" prefix="">
+            <name delimiter="/ " name-as-sort-order="all" sort-separator=", " form="short"/>
+          </names>
+          <date variable="issued" prefix=" (" suffix="):">
+            <date-part name="year" form="long" prefix="" suffix=""/>
+          </date>
+          <text variable="title" prefix=" " suffix=",  " font-style="italic"/>
+          <text variable="locator" suffix=""/>
+         </else-if> 
+        </else>
+        </choose>
+    </layout>
+  </citation>
+  <bibliography>
+    <layout>
+      <choose>
+        <if type="article-journal">
+          <names variable="author" prefix="" suffix=" ">
+            <name delimiter="/ " name-as-sort-order="all" sort-separator=", " form="long"/>
+          </names>
+          <date variable="issued" prefix=" (" suffix="):">
+            <date-part name="year" form="long" prefix="" suffix=""/>
+          </date>
+          <text variable="title" prefix=" " suffix=". " font-style="italic"/>
+          <text variable="container-title" prefix="In: " suffix=" "/>
+          <date variable="issued" prefix="" suffix=", ">
+            <date-part name="year" form="long" prefix="" suffix=""/>
+          </date>
+          <text variable="volume" prefix="Vol. " suffix=", "/>
+          <text variable="issue" prefix="Nr. " suffix=": "/>
+          <text variable="page" suffix="."/>
+          <names variable="author" prefix=" (Zitiert als: ">
+            <name delimiter="/" name-as-sort-order="all" sort-separator=", " form="short"/>
+          </names>
+          <text variable="container-title" prefix=", " suffix=" " form="short"/>
+          <date variable="issued" prefix="" suffix=", ">
+            <date-part name="year" form="long" prefix="" suffix=""/>
+          </date>
+          <text variable="volume" prefix="Vol. " suffix=", "/>
+          <text variable="issue" prefix="Nr. " suffix=": "/>
+          <text variable="page" suffix=", [Fundstelle])."/>
+        </if>
+        <else-if type="article-newspaper">
+          <names variable="author" prefix="">
+            <name delimiter="/" name-as-sort-order="all" sort-separator=", "/>
+          </names>
+          	<date variable="issued" prefix=" (" suffix="):">
+	      	<date-part name="year" form="long" prefix="" suffix=""/>
+	      </date>
+	      <text variable="title" prefix=" " suffix=". " font-style="italic"/>
+          <text variable="container-title" prefix="In: " suffix=", "/>
+          <date variable="issued" prefix="am " suffix=": ">
+	            <date-part name="day" form="ordinal" prefix="" suffix="."/>
+	            <date-part name="month" form="numeric" prefix="" suffix="."/>
+	            <date-part name="year" form="long" prefix="" suffix=""/>
+          </date>
+          <text variable="locator" suffix="."/>
+        </else-if>
+        <else-if type="book">
+          <names variable="author" prefix="">
+            <name delimiter="/" name-as-sort-order="all" sort-separator=", " form="long"/>
+          </names>
+          <date variable="issued" prefix=" (" suffix="):">
+            <date-part name="year" form="long" prefix="" suffix=""/>
+          </date>
+          <text variable="title" prefix=" " suffix=". " font-style="italic"/>
+          <text variable="edition" prefix="" suffix=" Aufl., "/>
+          <text variable="publisher-place" prefix="" suffix=". "/>
+        </else-if>
+        <else-if type="chapter">
+  		 <names variable="author" prefix="">
+            <name delimiter="/" name-as-sort-order="all" sort-separator=", " form="long"/>
+          </names>
+          <date variable="issued" prefix=" (" suffix="):">
+            <date-part name="year" form="long" prefix="" suffix=""/>
+          </date>
+          <text variable="title" prefix=" " suffix=". " font-style="italic"/>
+          <names variable="editor" prefix=" In: " suffix=" (Hrsg.): ">
+            <name delimiter="/" name-as-sort-order="all" sort-separator=", " form="long"/>
+          </names>
+          <text variable="container-title" prefix="" suffix=", " font-style="italic"/>
+          <text variable="edition" prefix="" suffix="Aufl., "/>
+          <text variable="publisher-place" prefix="" suffix=", "/>
+          <date variable="issued" prefix="" suffix=": ">
+            <date-part name="year" form="long" prefix="" suffix=""/>
+          </date>
+          <text variable="page" suffix="."/>
+        </else-if>
+        <else-if type="thesis">
+          <names variable="author" prefix="" font-style="italic">
+            <name delimiter="/" name-as-sort-order="all" sort-separator=", " form="long"/>
+          </names>
+          <date variable="issued" prefix=" (" suffix="):">
+            <date-part name="year" form="long" prefix="" suffix=""/>
+          </date>
+          <text variable="title" prefix=", " suffix=", Diss. jur., "/>
+          <text variable="publisher-place" prefix="" suffix=". "/>
+        </else-if>
+        <else-if type="entry-encyclopedia">
+          <names variable="author" prefix="" suffix="" font-style="italic">
+            <name delimiter="/" name-as-sort-order="all" sort-separator=", " form="long"/>
+          </names>
+          <date variable="issued" prefix=" (" suffix="):">
+            <date-part name="year" form="long" prefix="" suffix=""/>
+          </date>
+          <text variable="title" prefix=" " suffix=". " font-style="italic"/>
+			<text variable="volume" prefix="Band " suffix=", "/>
+	        <text variable="edition" prefix="" suffix=" Aufl., "/>
+	        <text variable="publisher-place" prefix="" suffix=", "/>
+          <text variable="URL" prefix="Abrufbar unter: &lt;" suffix="> "/>
+          <date variable="accessed" prefix="Zuletzt abgerufen am: " suffix=".">
+            <date-part name="day" form="ordinal" prefix="" suffix="."/>
+            <date-part name="month" form="numeric" prefix="" suffix="."/>
+            <date-part name="year" form="long" prefix="" suffix=""/>
+          </date>
+        </else-if>
+        <else-if type="entry-dictionary">
+	        <names variable="editor" prefix="" suffix=" (Hrsg.)">
+	        <name delimiter="/" name-as-sort-order="all" sort-separator=", " form="long"/>
+	        </names>  
+	      <date variable="issued" prefix=" (" suffix="): ">
+            <date-part name="year" form="long" prefix="" suffix=""/>
+          </date>
+			<text variable="container-title" prefix="" suffix=", " font-style="italic"/>
+			<text variable="volume" prefix="Band " suffix=", "/>
+	          <text variable="edition" prefix="" suffix=" Aufl., "/>
+	          <text variable="publisher-place" prefix="" suffix=". (Zitiert als: "/> 
+	      	<names variable="editor" prefix="" suffix="/">
+	        <name delimiter="/" name-as-sort-order="all" sort-separator=", " form="short"/>
+	        </names>
+	        <text value="Bearbeiter" prefix="" suffix=", " font-style="italic"/>      
+			<text variable="title" prefix="" suffix="," form="short"/>
+			<text value=" Fundstelle)" prefix="" suffix=". " font-style="italic"/>  
+	      </else-if>
+	      <else-if type="paper-conference">
+          <names variable="author" prefix="">
+            <name delimiter="/" name-as-sort-order="all" sort-separator=", "/>
+          </names>
+            <date variable="issued" prefix=" (" suffix="):">
+	            <date-part name="year" form="long" prefix="" suffix=""/>
+	          </date>
+	          <text variable="title" prefix=" " suffix=", " font-style="italic"/>
+	          <text variable="locator" prefix="" suffix=". "/>
+          <text variable="container-title" prefix="In: " suffix=". "/>
+          	  <text variable="URL" prefix="Abrufbar unter: &lt;" suffix="> "/>
+	          <date variable="accessed" prefix="Zuletzt abgerufen am: " suffix=".">
+	            <date-part name="day" form="ordinal" prefix="" suffix="."/>
+	            <date-part name="month" form="numeric" prefix="" suffix="."/>
+	            <date-part name="year" form="long" prefix="" suffix=""/>
+	          </date>
+	     </else-if>
+    	<else-if type="webpage">
+           <names variable="author" prefix="" suffix=" ">
+            <name delimiter="/ " name-as-sort-order="all" sort-separator=", " form="long"/>
+          </names>
+          <date variable="issued" prefix=" (" suffix="):">
+            <date-part name="year" form="long" prefix="" suffix=""/>
+          </date>
+          <text variable="title" prefix=" " suffix=". " font-style="italic"/>
+          <text variable="container-title" prefix=" In: " suffix=". "/>
+          <text variable="URL" prefix="Abrufbar unter: &lt;" suffix="> "/>
+          <date variable="accessed" prefix="Zuletzt abgerufen am: " suffix=".">
+            <date-part name="day" form="ordinal" prefix="" suffix="."/>
+            <date-part name="month" form="numeric" prefix="" suffix="."/>
+            <date-part name="year" form="long" prefix="" suffix=""/>
+          </date>
+        </else-if>
+          <else>
+          <names variable="author" prefix="">
+            <name delimiter="/ " name-as-sort-order="all" sort-separator=", " form="short"/>
+          </names>
+          <date variable="issued" prefix=" (" suffix="): ">
+            <date-part name="year" form="long" prefix="" suffix=""/>
+          </date>
+          <text variable="title" prefix="" suffix=".  " font-style="italic"/>
+           <text variable="URL" prefix=" Abrufbar unter: &lt;" suffix="> "/>
+          <date variable="accessed" prefix="Zuletzt abgerufen am: " suffix=".">
+            <date-part name="day" form="ordinal" prefix="" suffix="."/>
+            <date-part name="month" form="numeric" prefix="" suffix="."/>
+            <date-part name="year" form="long" prefix="" suffix=""/>
+          </date>
+        </else>
+      </choose>
+    </layout>
+  </bibliography>
+</style>
